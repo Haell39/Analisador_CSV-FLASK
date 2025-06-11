@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Resultados</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <div class="container">
-    <h1>📄 Resultados da Análise</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <title>📈 Resultado</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📈 Resultado da Análise</h1>
 
-    <h2>🔢 Primeiras Linhas</h2>
-    {{ head|safe }}
+      <section>
+        <h2>🔢 Primeiras Linhas</h2>
+        {{ head|safe }}
+      </section>
 
-    <h2>🔚 Últimas Linhas</h2>
-    {{ tail|safe }}
+      <section>
+        <h2>🔻 Últimas Linhas</h2>
+        {{ tail|safe }}
+      </section>
 
-    <h2>📈 Estatísticas Descritivas</h2>
-    {{ describe|safe }}
+      <section>
+        <h2>📊 Estatísticas</h2>
+        {{ describe|safe }}
+      </section>
 
-    <h2>🚨 Valores Nulos</h2>
-    {{ nulls|safe }}
+      <section>
+        <h2>❗ Valores Nulos</h2>
+        {{ nulls|safe }}
+      </section>
 
-    <h2>🔥 Mapa de Correlação</h2>
-    <img src="{{ url_for('static', filename='heatmap.png') }}" alt="Heatmap de Correlação">
-  </div>
-</body>
+      <section>
+        <h2>🔥 Mapa de Correlação</h2>
+        <img
+          src="{{ url_for('static', filename='heatmap.png') }}"
+          alt="Heatmap de Correlação"
+        />
+      </section>
+    </div>
+  </body>
 </html>

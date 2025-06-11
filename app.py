@@ -21,7 +21,7 @@ def index():
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    file = request.files['csv_file']
+    file = request.files['file']
     if file.filename == '':
         return redirect(url_for('index'))
 
